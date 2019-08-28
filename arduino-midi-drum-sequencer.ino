@@ -88,13 +88,13 @@ void loop() {
 }
 
 void noteOn(int note) {
-  Serial.write(0x99);
+  Serial.write(0x9A); // 9 is midi note on, A is midi channel 10
   Serial.write(note);
-  Serial.write(0x45);
+  Serial.write(0x45); // Medium velocity
 }
 
 void noteOff(int note) {
-  Serial.write(0x8A);
+  Serial.write(0x8A); // 8 is midi note off, A is midi channel 10
   Serial.write(note);
   Serial.write(0x45);
 }
